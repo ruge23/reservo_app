@@ -1,5 +1,16 @@
 page-home {
+    ion-content{
+        background-image: url("http://estareservado.ctrlztest.com.ar/imgApp_Reservo/bg2.jpg");
+        background-size: cover;
+    }
+    .item{
+        background-color: transparent !important;
+        border-bottom: 1px solid #666 !important;
+    }
     .input-wrapper{
         border-bottom-width: 1px solid #666;
+    }
+    .custom-popover {
+        width: 30%;
     }
 }

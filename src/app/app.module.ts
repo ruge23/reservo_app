@@ -17,10 +17,9 @@ import { ScannerPage } from '../pages/scanner/scanner';
 import { PerfilAdminPage } from '../pages/perfil-admin/perfil-admin';
 import { ReservasAdminPage } from '../pages/reservas-admin/reservas-admin';
 import { ResumenAdminPage } from '../pages/resumen-admin/resumen-admin';
+import { PopoverComponent } from './../components/popover/popover';
 
 import { Geolocation } from '@ionic-native/geolocation';
-//import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-//import { Facebook } from '@ionic-native/facebook';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -38,7 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ScannerPage,
     PerfilAdminPage,
     ReservasAdminPage,
-    ResumenAdminPage
+    ResumenAdminPage,
+    PopoverComponent
   ],
   imports: [
     BrowserModule,
@@ -60,15 +60,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ScannerPage,
     PerfilAdminPage,
     ReservasAdminPage,
-    ResumenAdminPage
+    ResumenAdminPage,
+    PopoverComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    //BarcodeScanner,
-    //Facebook
   ]
 })
 export class AppModule {}

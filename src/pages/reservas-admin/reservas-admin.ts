@@ -36,6 +36,17 @@ export class ReservasAdminPage {
     this.navCtrl.push('ResumenEventPage',{info:e});
   }
 
+  cortarCaracteres(frase){
+    var resultado;
+    if(frase.length >= 10){
+      resultado = frase.substring(0, 10);
+      return resultado +' ...';
+    }else{
+      resultado = frase;
+      return resultado;
+    }
+  }
+
   goToAddEvent(){
     this.navCtrl.push('AddNewEventPage');
     //console.log('holaaaaa');

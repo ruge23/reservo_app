@@ -5,13 +5,16 @@
 </ion-header>
 
 <ion-content>
+  <h3 *ngIf="ingresos" style="text-align: center;">{{sinIngresos(ingresos)}}</h3>
   <ion-list *ngFor="let ingreso of ingresos">
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon name="contact"></ion-icon>
-      </ion-avatar>
-      <h2>{{ingreso.nombreusuario}} {{ingreso.usuarioapellido}}</h2>
-      <p>{{ingreso.usuariodni}}</p>
-    </ion-item>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://graph.facebook.com/{{ingreso.facebookid}}/picture?type=square">
+        </ion-avatar>
+        <h2>{{ingreso.nombreusuario}} {{ingreso.usuarioapellido}}</h2>
+        <p>{{ingreso.usuariodni}}</p>
+      </ion-item>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

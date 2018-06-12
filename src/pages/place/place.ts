@@ -36,7 +36,7 @@ export class PlacePage {
   }
 
   goToEvents(){
-    this.navCtrl.push('EventosPage');
+    this.navCtrl.push('EventosPage', {info: this.idLocal, nombreLocal: this.info[0].nombre });
     //console.log("Holaaa!");
   }
 

@@ -5,18 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <h1 style="margin-left: 20px;">{{mostrarDia()}}</h1>
-  <h3 *ngIf=invitados[0] style="text-align: center;">{{invitados[0].nombrevento}}</h3><!--harcor => desde el cliente loggeado-->
+  <h1 style="margin-left: 20px; color: white;">{{mostrarDia()}}</h1>
+  <h3 *ngIf=nombreEvento style="text-align: center; color: white;">{{nombreEvento}}</h3><!--harcor => desde el cliente loggeado-->
   <div *ngIf="searching" class="spinner-container">
     <ion-spinner></ion-spinner>
   </div>
+  <p style="text-align: center; color: white;" *ngIf="invitados">{{sinInvitados(invitados)}}</p>
   <ion-list *ngFor="let invitado of invitados">
-    <ion-item (click)="goToDetalleReserva(invitado, this)">
-      <ion-avatar item-start>
-        <ion-icon name="contact"></ion-icon>
-      </ion-avatar>
-      <h2>{{invitado.nombreusuario}} {{invitado.usuarioapellido}}</h2>
-      <p>{{invitado.usuariodni}}</p>
-    </ion-item>
+      <ion-item (click)="goToDetalleReserva(invitado, this)">
+        <ion-avatar item-start>
+          <img src="http://graph.facebook.com/{{invitado.facebookid}}/picture?type=square">
+        </ion-avatar>
+        <h2 style="color: white;">{{invitado.nombreusuario}} {{invitado.usuarioapellido}}</h2>
+        <p>{{invitado.usuariodni}}</p>
+      </ion-item> 
   </ion-list>
 </ion-content>

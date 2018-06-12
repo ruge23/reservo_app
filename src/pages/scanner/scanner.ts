@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+//import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 @IonicPage()
 @Component({
@@ -9,7 +9,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 })
 export class ScannerPage {
   
-  options: BarcodeScannerOptions;
+  //options: BarcodeScannerOptions;
   encodedData:any={};
   encodeText: string='';
   scannedData:any={};
@@ -17,10 +17,11 @@ export class ScannerPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public scanner: BarcodeScanner,
+    //public scanner: BarcodeScanner,
   ) {
   }
 
+  /*
   scan(){
     this.scanner.scan(this.options)
       .then((data)=>{
@@ -31,5 +32,5 @@ export class ScannerPage {
       }
     )
   }
-
+*/
 }

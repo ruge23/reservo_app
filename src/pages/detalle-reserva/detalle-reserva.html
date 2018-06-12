@@ -5,26 +5,26 @@
 
 <ion-content>
     <ion-grid *ngIf=info>
-        <h1 style="margin-top: 5px; text-align: center;">Perfil Scaneado</h1>
+        <h1 style="margin-top: 5px; text-align: center; color: white;">Perfil Scaneado</h1>
         <ion-row>
           <ion-col style="margin:20px 30px;height: 70%;width: 70%; text-align: center; border: 1px solid #666;">
-            <img style="height: 80%; width: 80%; margin: 20px 20px;;" src="../../assets/imgs/logo.png">
+            <img style="height: 80%; width: 80%; margin: 20px 20px; background-size: cover;background-position: center;" src="http://graph.facebook.com/{{info.facebookid}}/picture?type=square">
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col style="text-align: center;">
-            <h3>{{info.nombreusuario}} {{info.usuarioapellido}}</h3>
+            <h3 style="color: white;">{{info.nombreusuario}} {{info.usuarioapellido}}</h3>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col *ngIf=data style="text-align: center;">
-            <p><ion-icon name="calendar"></ion-icon>{{mostrarDia(data)}}</p>
+            <p style="color: white;"><ion-icon name="calendar"></ion-icon>{{mostrarDia(data)}}</p>
           </ion-col>
           <ion-col style="text-align: center;">
-            <p><ion-icon name="card"></ion-icon>{{info.usuariodni}}</p>
+            <p style="color: white;"><ion-icon name="card"></ion-icon>{{info.usuariodni}}</p>
           </ion-col>
           <ion-col style="text-align: center;">
-            <p style="border-left: 1px solid #666;">{{info.edad}} años</p>
+            <p style="border-left: 1px solid #666; color: white;">{{info.edad}} años</p>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -36,7 +36,7 @@
         </ion-row>
         <ion-row style="margin-top: 10px;">
           <ion-col style="margin: auto;">
-            <img style="margin-left: 100px;width: 30%; height: 30%;" src="../../assets/imgs/logo.png">
+            <img style="margin-left: 35%;width: 30%; height: 30%;" src="http://estareservado.ctrlztest.com.ar/imgApp_Reservo/logo-reservado.png">
           </ion-col>
         </ion-row>
       </ion-grid>

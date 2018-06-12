@@ -20,7 +20,7 @@ export class ListInvitedPage {
   searching : any = false;
   idEvent : any;
   fecha: any;
-  invitado: any;
+  nombreEvento: any;
   dataFilter : any;
 
   constructor(
@@ -29,6 +29,7 @@ export class ListInvitedPage {
     private http: HttpClient,
     public data: Http,
   ) {
+    this.nombreEvento = this.navParams.get('info').nombre;
     this.idEvent = this.navParams.get('info').id;
     this.fecha = this.navParams.get('info').fechadesde;
     this.invitados;
@@ -37,7 +38,6 @@ export class ListInvitedPage {
   }
   
   ionViewDidLoad(): void{
-    console.log('asi',this.idEvent);
     this.http.post('http://estareservado.ctrlztest.com.ar/traerinvitadosevento.php?eventoid='+this.idEvent,{},{headers :{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'} })
     .subscribe(
       res=>{
@@ -45,7 +45,7 @@ export class ListInvitedPage {
         this.dataFilter=this.invitados.map((obj)=>{
           return {nombre: obj.nombreusuario,apellido: obj.usuarioapellido,dni: obj.usuariodni}
         })
-        console.log(this.dataFilter);
+        console.log(this.invitados);
       },
       err=>{console.log('Error', err)}
     );
@@ -100,6 +100,10 @@ export class ListInvitedPage {
           day = "Sábado";
     }
     return day
+  }
+
+  sinInvitados(data){
+    if(data.length === 0) return 'Sin reservas hasta el momento!';
   }
 
   goToDetalleReserva(e, event){

@@ -5,10 +5,11 @@
 </ion-header>
 
 <ion-content>
-  <h3 *ngFor="let evento of eventos" style="text-align: center;">{{evento.nombrelocal}}</h3>
-    <ion-list>    
-        <ion-item *ngFor="let evento of eventos">
-          <ion-thumbnail item-start (click)=goToEvent(this)>
+  <h3 style="text-align: center;">{{nombreLocal}}</h3>
+  <h5 style="text-align: center;" *ngIf="eventos">{{sinEventos(eventos)}}</h5>
+  <ion-list *ngFor="let evento of eventos">    
+        <ion-item>
+          <ion-thumbnail item-start (click)=goToEvent(evento)>
             <img src="{{evento.foto}}">
           </ion-thumbnail>
           <div style="display: flex; text-align: center;">

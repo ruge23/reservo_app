@@ -4,18 +4,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content *ngIf=info>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="../assets/imgs/logo.png">
-      </ion-thumbnail>
-      <div style="border: 1px solid grey; border-radius: 30px; text-align: center; height: 60px;">
-        <h4>{{info.nombre}}</h4><br>
-        <p>{{info.fechadesde}}•</p>
-      </div>
-    </ion-item>
-  </ion-list>
+<ion-content class="card-background-page" *ngIf=info>
+  <ion-card>
+    <img src="{{info.foto}}"/>
+    <div class="card-title">{{info.nombre}}</div>
+    <div class="card-subtitle">{{info.fechadesde}}</div>
+  </ion-card>
   <ion-row>
       <ion-col>
         <ion-toolbar style="width: 100% !important; margin: 0 !important;">

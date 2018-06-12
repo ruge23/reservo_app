@@ -13,6 +13,8 @@ export class EventosPage {
 
   info: any [];
   eventos : any;
+  data:any;
+  nombreLocal: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -20,17 +22,28 @@ export class EventosPage {
     private http: HttpClient,
     public alertCtrl: AlertController
   ) {
+    this.data = this.navParams.get('info');
+    this.nombreLocal = this.navParams.get('nombreLocal')
     this.eventos;
   }
 
   ngOnInit(): void {
-    this.http.get('http://estareservado.ctrlztest.com.ar/traereventos.php')
+    this.http.get('http://estareservado.ctrlztest.com.ar/traereventosxlocal.php?localid='+this.data)
       .subscribe((response)=>{
         this.info = JSON.parse(response['data'])
         //console.log('data',response);
-        this.eventos = this.info['eventos'];
+        this.eventos = this.info['evento'];
         console.log('aqui',this.eventos)
       })
+  }
+  
+  ionViewDidLoad(){
+    console.log(this.data)
+    console.log(this.nombreLocal);
+  }
+
+  sinEventos(eventos){
+    if(eventos.length === 0) return 'No hay eventos agregados en este Local!';
   }
 
   cortarCaracteres(frase){
@@ -54,7 +67,7 @@ export class EventosPage {
   }
 
   goToEvent(e){
-    this.navCtrl.push('EventPage', {info: e.eventos});
+    this.navCtrl.push('EventPage', {info: e, nombreLocal:this.nombreLocal});
     //console.log('aqui');
   }
 

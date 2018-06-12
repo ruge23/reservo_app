@@ -1,6 +1,6 @@
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import { PerfilPage } from '../perfil/perfil';
 import { TabsClientPage } from '../tabsclient/tabsclient';
@@ -23,7 +23,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private facebook: Facebook
+    public alertCtrl: AlertController,
+    //private facebook: Facebook
   ) {
   }
 
@@ -38,9 +39,21 @@ export class LoginPage {
       this.navCtrl.push(TabsClientPage);
     }else if(this.username === "admin" && this.password.value === "1234"){
       this.navCtrl.push(TabsAdminPage);
+    }else{
+      this.showAlert();
     }
   }
 
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Error',
+      subTitle: 'Rellenar los Campos!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  /*
   loginWithFB(){
     this.facebook.login(['email', 'public_profile'])
       .then((response: FacebookLoginResponse)=>{
@@ -52,4 +65,5 @@ export class LoginPage {
           });
       });
   }
+  */
 }

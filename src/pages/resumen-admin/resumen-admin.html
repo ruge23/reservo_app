@@ -4,35 +4,40 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <h2 style="margin-left: 10px;">RRPP</h2>
+<ion-content padding>
+  <h2 style="margin-left: 10px; color: white;">RRPP</h2>
   <ion-grid style="margin: 0;">
     <ion-row>
       <ion-col col-4>
-        <img src="../assets/imgs/logo.png"/>
+        <img src="https://pixel.nymag.com/imgs/daily/vulture/2017/06/14/14-tom-cruise.w710.h473.jpg"/>
       </ion-col>
       <ion-col col-8>
-        <h3 style="margin-top: 15%; margin-left: 5%;">Nombre Apellido</h3>
+        <h3 style="margin-top: 15%; margin-left: 5%; color: white;">Nombre Apellido</h3>
       </ion-col>
     </ion-row>  
   </ion-grid>
   <ion-list *ngFor="let cuenta of cuentas">    
     <ion-item>
       <ion-thumbnail item-start style="border-right: 1px solid grey; text-align: center;">
-        <h5 style="margin-top: 30px;"><strong>{{mostrarFecha(cuenta.fechaevento)}}</strong></h5>
+        <h5 style="margin-top: 30px; color: white;"><strong>{{mostrarFecha(cuenta.fechaevento)}}</strong></h5>
       </ion-thumbnail>
       <ion-grid>
         <ion-row>
           <ion-col>
-            <p>Anotados</p>
-            <p>Entraron</p>
+            <p style="color: white;">Anotados</p>
+            <p style="color: white;">Entraron</p>
           </ion-col>
           <ion-col>
-            <p>{{cuenta.anotados}}</p>
-            <p>{{cuenta.entraron}}</p>
+            <p style="color: white;">{{cuenta.anotados}}</p>
+            <p style="color: white;">{{cuenta.entraron}}</p>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
   </ion-list>
+  <ion-row style="margin-top: 10px;">
+    <ion-col style="margin: auto;">
+      <img style="width: 30%; height: 30%;margin-left: 35%;" src="http://estareservado.ctrlztest.com.ar/imgApp_Reservo/logo-reservado.png">
+    </ion-col>
+  </ion-row>  
 </ion-content>

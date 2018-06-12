@@ -13,6 +13,7 @@ export class EventPage {
   info : any;
   infoUser : any;
   usuarioId = 623982267;
+  nombreLocal: any;
   
   constructor(
     public navCtrl: NavController, 
@@ -22,6 +23,7 @@ export class EventPage {
     this.getInfoUser();
     this.info;
     this.infoUser;
+    this.nombreLocal = this.navParams.get('nombreLocal');
   }
 
   getInfoUser(){
@@ -36,6 +38,7 @@ export class EventPage {
   ionViewDidLoad() {
     this.info=this.navParams.get('info');
     console.log(this.info);
+    console.log(this.nombreLocal);
   }
 
   mostrarDia(fecha){

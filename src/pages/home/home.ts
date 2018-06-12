@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { PopoverComponent } from './../../components/popover/popover';
+import { PopoverController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PlacePage } from '../place/place';
 
@@ -17,7 +19,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController, 
     private http: HttpClient,
-    public geolocation: Geolocation
+    public geolocation: Geolocation,
+    public popoverCtrl : PopoverController,
   ) {
     this.locales;
   }
@@ -29,6 +32,13 @@ export class HomePage {
         this.locales = this.info['stores'];
         //console.log(this.locales)
       })
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverComponent);
+    popover.present({
+      ev: myEvent
+    });
   }
 
   ionViewDidLoad(){

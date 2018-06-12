@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title color="secondary">Perfil Administrador</ion-title>
+    <ion-title>Perfil Administrador</ion-title>
+    <ion-buttons end> 
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -13,23 +18,16 @@
         </button>       
       </ion-col>
     </ion-row>
-    <ion-card *ngIf=info>
-      <ion-row>
-        <ion-col col-4>
-          <img src="../assets/imgs/logo.png"/>
-        </ion-col>
-        <ion-col col-8 style="text-align: center;">
-          <h1 style="margin-top: 20%; margin-left: 5%;">{{info.nombre}}</h1>
-        </ion-col>
-        </ion-row>  
-        <ion-card-content>
-          <ion-card-title>
-            Description
-          </ion-card-title>
-          <p>
-            {{info.descripcion}}
-          </p>
+    <ion-card class="cards-bg" *ngIf="info">
+      <img src="{{info.foto}}"/>
+      <ion-card-content>
+        <ion-card-title>
+            Descripcion
+        </ion-card-title>
+        <p>
+          {{info.descripcion}}
+        </p>
       </ion-card-content>
-      </ion-card>
+    </ion-card>
     </ion-grid>
 </ion-content>

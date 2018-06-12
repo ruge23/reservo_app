@@ -33,4 +33,7 @@ export class ListIngresosPage {
     );
   }
 
+  sinIngresos(data){
+    if(data.length === 0) return 'No hay lista de ingresos en este evento!!'; 
+  }
 }

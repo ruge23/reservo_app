@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+//import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 @IonicPage()
 @Component({
@@ -15,11 +15,11 @@ export class QrDataPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public scanner: BarcodeScanner
+    //public scanner: BarcodeScanner
   ) {
     this.info=this.navParams.get('info');
   }
-
+/*
   encode(){
     this.scanner.encode(this.scanner.Encode.TEXT_TYPE, this.info)
       .then((data)=>{
@@ -28,5 +28,5 @@ export class QrDataPage {
         console.log('Error', err);
       })
   }
-
+*/
 }

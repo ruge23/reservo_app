@@ -4,30 +4,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content *ngIf="info">
-  <ion-grid>
-    <ion-row>
-      <ion-col col-4>
-        <img src="../assets/imgs/logo.png"/>
-      </ion-col>
-      <ion-col col-8 style="text-align: center;">
-        <h1>{{info[0].nombrelocal}}</h1>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content class="card-background-page" *ngIf="info">
+  <ion-card>
+    <img src="{{info.foto}}"/>
+    <div *ngIf="nombreLocal" class="card-title">{{nombreLocal}}</div>
+  </ion-card>
   <ion-toolbar color="dark">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-badge style="margin-left:5%; margin-top:5%; font-size: 1.5em;" color="secondary">{{mostrarDia(info[0].fechadesde)}}</ion-badge>
+          <ion-badge style="margin-left:5%; margin-top:5%; font-size: 1.5em;" color="secondary">{{mostrarDia(info.fechadesde)}}</ion-badge>
         </ion-col>
         <ion-col>
-          <h6 style="color: #f4f4f4; text-align: center;">{{info[0].nombre}}</h6>
+          <h6 style="color: #f4f4f4; text-align: center;">{{info.nombre}}</h6>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-toolbar>
-  <form #loginForm="ngForm" (ngSubmit)="goToReserva(info[0])" autocomplete="off" id="cloud-layer">
+  <form #loginForm="ngForm" (ngSubmit)="goToReserva(info)" autocomplete="off" id="cloud-layer">
     <div style="height: 275px; border: 1px solid #666; border-radius: 20px; margin-top: 10px !important;">
       <ion-row>
         <ion-col>
@@ -45,7 +39,7 @@
                 <ion-label>Fecha Nac:</ion-label><ion-label>{{infoUser[7]}}</ion-label>
             </ion-item>
             <ion-item>
-              <ion-label>$ {{info[0].precio}}</ion-label>
+              <ion-label>${{info.precio}}</ion-label>
               <ion-label><button (click)="goToPago()" style="margin-left: 5px;" ion-button outline item-end>
                   <ion-icon style="margin: 5px; font-size: 1.5em;" name="card"></ion-icon>
                   Tarjeta

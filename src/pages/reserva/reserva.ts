@@ -15,10 +15,10 @@ export class ReservaPage {
     public navCtrl: NavController, 
     public navParams: NavParams
   ) {
+    this.info=this.navParams.get('info');
   }
 
   ionViewDidLoad() {
-    this.info=this.navParams.get('info');
     console.log(this.info);
   }
 

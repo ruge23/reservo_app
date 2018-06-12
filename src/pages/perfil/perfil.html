@@ -1,18 +1,17 @@
 <ion-header>
   <ion-navbar color ="dark">
-    <div *ngIf="info" style="display: flex;">
+    <div style="display: flex;">
       <ion-title color="secondary">Tu Perfil</ion-title>
-      <img style="width: 100px; height: 100px; margin-right: 40px" src="{{info.picture}}">
+      <div style="width: 100px; height: 100px; border: 1px solid #666;">
+        <img src="https://pixel.nymag.com/imgs/daily/vulture/2017/06/14/14-tom-cruise.w710.h473.jpg">
+      </div>
     </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
     <form #loginForm="ngForm" (ngSubmit)="savePerfil()" autocomplete="off" id="cloud-layer">
-        <ion-row>
-          <ion-col>
-            <ion-list inset>
-                <ion-item>
+                <ion-item class="no-scroll">
                   <ion-label><ion-icon name="person"></ion-icon></ion-label>
                   <ion-input placeholder="Nombre" type="text" required></ion-input>
                 </ion-item>    
@@ -32,9 +31,6 @@
                   <ion-label><ion-icon name="card"></ion-icon></ion-label>
                   <ion-input placeholder="DNI" type="number" required></ion-input>
               </ion-item>
-            </ion-list>
-          </ion-col>
-        </ion-row>
         <ion-row style="margin-top:20px;">
           <ion-col>
             <button ion-button class="submit-btn" full type="submit">Continuar</button>

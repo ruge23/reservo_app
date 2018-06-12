@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { PopoverComponent } from './../../components/popover/popover';
+import { PopoverController } from 'ionic-angular';
 
 import { EditPerfilAdminPage } from '../edit-perfil-admin/edit-perfil-admin';
 
@@ -18,6 +20,7 @@ export class PerfilAdminPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private http: HttpClient,
+    public popoverCtrl : PopoverController,
   ) {
     this.info;
   }
@@ -30,6 +33,13 @@ export class PerfilAdminPage {
           console.log(this.info)},
         err=>{console.log('Error', err)}
       )
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverComponent);
+    popover.present({
+      ev: myEvent
+    });
   }
 
   goToEditPerfil(){

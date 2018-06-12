@@ -9,7 +9,9 @@
 <ion-content>
   <ion-list *ngFor="let reserva of reservas">
     <ion-item (click)="mostrarQR(reserva)">
-      <ion-icon name="ionic" item-start></ion-icon>
+      <ion-avatar item-start>
+        <img src="{{reserva.fotoevento}}">
+      </ion-avatar>
       {{reserva.nombrelugar}}
       <ion-col>
         <ion-badge style="margin-left: 5px;" color="secondary">{{mostrarDia(reserva.fechaevento)}}</ion-badge>
