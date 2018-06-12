@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="dark">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid *ngIf=info>
+        <h1 style="margin-top: 5px; text-align: center;">Perfil Scaneado</h1>
+        <ion-row>
+          <ion-col style="margin:20px 30px;height: 70%;width: 70%; text-align: center; border: 1px solid #666;">
+            <img style="height: 80%; width: 80%; margin: 20px 20px;;" src="../../assets/imgs/logo.png">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="text-align: center;">
+            <h3>{{info.nombreusuario}} {{info.usuarioapellido}}</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngIf=data style="text-align: center;">
+            <p><ion-icon name="calendar"></ion-icon>{{mostrarDia(data)}}</p>
+          </ion-col>
+          <ion-col style="text-align: center;">
+            <p><ion-icon name="card"></ion-icon>{{info.usuariodni}}</p>
+          </ion-col>
+          <ion-col style="text-align: center;">
+            <p style="border-left: 1px solid #666;">{{info.edad}} años</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="text-align: center;">
+            <ion-toolbar color="dark">
+              <ion-badge style="font-size: 2em;" color="secondary">{{pago(info.pago)}}</ion-badge>
+            </ion-toolbar>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-col style="margin: auto;">
+            <img style="margin-left: 100px;width: 30%; height: 30%;" src="../../assets/imgs/logo.png">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

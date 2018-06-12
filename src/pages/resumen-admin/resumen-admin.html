@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Resumen de Cuentas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2 style="margin-left: 10px;">RRPP</h2>
+  <ion-grid style="margin: 0;">
+    <ion-row>
+      <ion-col col-4>
+        <img src="../assets/imgs/logo.png"/>
+      </ion-col>
+      <ion-col col-8>
+        <h3 style="margin-top: 15%; margin-left: 5%;">Nombre Apellido</h3>
+      </ion-col>
+    </ion-row>  
+  </ion-grid>
+  <ion-list *ngFor="let cuenta of cuentas">    
+    <ion-item>
+      <ion-thumbnail item-start style="border-right: 1px solid grey; text-align: center;">
+        <h5 style="margin-top: 30px;"><strong>{{mostrarFecha(cuenta.fechaevento)}}</strong></h5>
+      </ion-thumbnail>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Anotados</p>
+            <p>Entraron</p>
+          </ion-col>
+          <ion-col>
+            <p>{{cuenta.anotados}}</p>
+            <p>{{cuenta.entraron}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

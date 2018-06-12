@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Reservas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let event of eventos">    
+    <ion-grid>
+      <ion-item (click)=goToEvent(event)>
+        <ion-row align-items-center>
+          <ion-col style="text-align: center;">
+            <p><ion-icon style="font-size: 1.5em;" name="pie"></ion-icon></p>
+            <ion-badge color="secondary">51/100</ion-badge>
+          </ion-col>
+          <ion-col>
+            <p>{{event.nombre}}</p>
+            <div style="display: flex;">
+              <ion-badge color="secondary">{{event.fechadesde}}</ion-badge>
+              <ion-icon style="margin-left: 5px; font-size: 1.5em;" name="calendar"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="text-align: center; border: 1px solid #666; border-radius: 20px;"><p style="font-size: 0.8em;">Precio</p><p style="font-size: 0.6em;">${{event.precio}}</p></div>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>      
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="goToAddEvent()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

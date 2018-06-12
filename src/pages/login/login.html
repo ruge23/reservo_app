@@ -1,0 +1,43 @@
+<ion-content padding>
+  <form  #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" id="cloud-layer">
+    <ion-row>
+      <ion-col>
+        <img src="../assets/imgs/logo.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:20px;">
+      <ion-col>
+        <ion-list inset>
+            <ion-item>
+              <ion-label><ion-icon name="person"></ion-icon></ion-label>
+              <ion-input #username placeholder="Username" type="text" required></ion-input>
+            </ion-item>    
+            <ion-item>
+              <ion-label><ion-icon name="unlock"></ion-icon></ion-label>
+              <ion-input #password placeholder="Password" type="password" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:10px;">
+      <ion-col>
+        <button ion-button class="submit-btn" full type="submit">Login!</button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:10px;">
+      <ion-col>
+        <button ion-button class="submit-btnFB" full (click)="loginWithFB()">Iniciar Sesion con Facebook</button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:10px;">
+      <ion-col>
+        <p style="font-size: 0.7em;">Al continuar aceptás <strong>Nuestros Términos<br/>de servicio y Politica de Privacidad</strong></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p style="font-size: 0.7em;">No publicamos nada en Facebook</p>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -1,11 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+  <ion-navbar color ="dark">
+    <ion-title color="secondary">Tu Perfil</ion-title>
+    <img style="width: 100px; height: 100px;" src="../assets/imgs/logo.png">
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content *ngIf=info>
+  <form #loginForm="ngForm" id="cloud-layer">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+            <ion-item>
+              <ion-label><ion-icon name="person"></ion-icon>{{info[2]}}</ion-label>
+            </ion-item>    
+            <ion-item>
+              <ion-label><ion-icon name="person"></ion-icon>{{info[3]}}</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label><ion-icon name="mail"></ion-icon>{{info[4]}}</ion-label>
+          </ion-item>    
+          <ion-item>
+              <ion-label><ion-icon name="call"></ion-icon>{{info.phone}}</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label><ion-icon name="card"></ion-icon>{{info.dni}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+</form>
 </ion-content>

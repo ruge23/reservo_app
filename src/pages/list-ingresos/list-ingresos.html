@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Lista ingresos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let ingreso of ingresos">
+    <ion-item>
+      <ion-avatar item-start>
+        <ion-icon name="contact"></ion-icon>
+      </ion-avatar>
+      <h2>{{ingreso.nombreusuario}} {{ingreso.usuarioapellido}}</h2>
+      <p>{{ingreso.usuariodni}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

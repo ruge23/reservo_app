@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Evento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="info">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <img src="../assets/imgs/logo.png"/>
+      </ion-col>
+      <ion-col col-8 style="text-align: center;">
+        <h1>{{info[0].nombrelocal}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-badge style="margin-left:5%; margin-top:5%; font-size: 1.5em;" color="secondary">{{mostrarDia(info[0].fechadesde)}}</ion-badge>
+        </ion-col>
+        <ion-col>
+          <h6 style="color: #f4f4f4; text-align: center;">{{info[0].nombre}}</h6>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <form #loginForm="ngForm" (ngSubmit)="goToReserva(info[0])" autocomplete="off" id="cloud-layer">
+    <div style="height: 275px; border: 1px solid #666; border-radius: 20px; margin-top: 10px !important;">
+      <ion-row>
+        <ion-col>
+          <ion-list *ngIf=infoUser>
+            <ion-item>
+              <ion-label>Nombre:</ion-label><ion-label>{{infoUser[2]}}</ion-label>
+            </ion-item>    
+            <ion-item>
+                <ion-label>Apellido:</ion-label><ion-label>{{infoUser[3]}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>DNI:</ion-label><ion-label>{{infoUser.dni}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Fecha Nac:</ion-label><ion-label>{{infoUser[7]}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>$ {{info[0].precio}}</ion-label>
+              <ion-label><button (click)="goToPago()" style="margin-left: 5px;" ion-button outline item-end>
+                  <ion-icon style="margin: 5px; font-size: 1.5em;" name="card"></ion-icon>
+                  Tarjeta
+                </button></ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </div>
+      <ion-row>
+        <ion-col>
+          <button ion-button style="margin-left: 60%;" type="submit">RESERVAR</button>
+        </ion-col>
+      </ion-row>
+  </form> 
+</ion-content>

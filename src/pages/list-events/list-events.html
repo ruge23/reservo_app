@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Lista Eventos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let evento of eventos">    
+        <ion-item (click)=goToListInvitados(evento)>
+          <ion-thumbnail item-start>
+            <img src="../assets/imgs/logo.png">
+          </ion-thumbnail>
+          <div style="display: flex; text-align: center;">
+            <ion-icon style="float: left; margin: 3px;" name="pin"></ion-icon><h4 style="float: right; margin-top: 5px;">{{evento.direccion}}</h4>
+          </div>
+          <div style="display: flex; text-align: center;">
+              <ion-icon style="float: left; margin: 3px;" name="logo-facebook"></ion-icon><p style="float: right; margin-top: 5px;">{{evento.nombre}}•</p>
+          </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

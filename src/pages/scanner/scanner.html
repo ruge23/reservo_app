@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Scanner QR</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <button ion-button block (click)="scan()">Scan</button>
+      <div *ngIf="scannedData.text">
+        <label>Your barcode is</label>
+        <br>
+        <span>{{scannedData.text}}</span>    
+      </div>
+  </div>
+</ion-content>

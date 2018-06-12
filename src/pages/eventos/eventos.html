@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Eventos Actuales</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 *ngFor="let evento of eventos" style="text-align: center;">{{evento.nombrelocal}}</h3>
+    <ion-list>    
+        <ion-item *ngFor="let evento of eventos">
+          <ion-thumbnail item-start (click)=goToEvent(this)>
+            <img src="{{evento.foto}}">
+          </ion-thumbnail>
+          <div style="display: flex; text-align: center;">
+            <ion-icon style="float: left; margin: 3px;" name="pin"></ion-icon><h4 (click)="showAlert(evento.direccion)" style="float: right; margin-top: 5px;">{{cortarCaracteres(evento.direccion)}}</h4>
+          </div>
+          <div style="display: flex; text-align: center;">
+              <ion-icon style="float: left; margin: 3px;" name="logo-facebook"></ion-icon><p style="float: right; margin-top: 5px;">{{evento.nombre}}</p>
+          </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

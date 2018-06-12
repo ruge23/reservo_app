@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Perfil Administrador</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-end>
+      <ion-col col-4>
+        <button style="background-color: #222;" color="dark">
+          <ion-badge color="dark" (click)="goToEditPerfil()">Editar</ion-badge>
+        </button>       
+      </ion-col>
+    </ion-row>
+    <ion-card *ngIf=info>
+      <ion-row>
+        <ion-col col-4>
+          <img src="../assets/imgs/logo.png"/>
+        </ion-col>
+        <ion-col col-8 style="text-align: center;">
+          <h1 style="margin-top: 20%; margin-left: 5%;">{{info.nombre}}</h1>
+        </ion-col>
+        </ion-row>  
+        <ion-card-content>
+          <ion-card-title>
+            Description
+          </ion-card-title>
+          <p>
+            {{info.descripcion}}
+          </p>
+      </ion-card-content>
+      </ion-card>
+    </ion-grid>
+</ion-content>

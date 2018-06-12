@@ -1,3 +1,12 @@
 page-about {
-
+    div{
+        display: flex;
+        text-align: center;
+    }
+    ion-icon{
+        float: left;
+    }
+    p{
+        float: right;
+    }
 }

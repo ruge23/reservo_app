@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Agregar Fiesta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #loginForm="ngForm" (ngSubmit)="saveEvent()" autocomplete="off">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-label><ion-icon name="person"></ion-icon></ion-label>
+            <ion-input placeholder="Nombre" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="calendar"></ion-icon></ion-label>
+            <ion-input placeholder="Fecha y Hora Inical"></ion-input>
+            <ion-datetime displayFormat="MMM DD, HH:mm"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="time"></ion-icon></ion-label>
+            <ion-input placeholder="Fecha y Hora Final"></ion-input>
+            <ion-datetime displayFormat="MMM DD, HH:mm"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="disc"></ion-icon></ion-label>
+            <ion-input placeholder="Tipo de Evento" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="image"></ion-icon></ion-label>
+            <ion-input placeholder="Cantidad Entradas" type="number" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="cash"></ion-icon></ion-label>
+            <ion-input placeholder="Precio" type="number" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="images"></ion-icon></ion-label>
+            <ion-input placeholder="Foto - (url)" type="text" required></ion-input>
+          </ion-item>  
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:20px;">
+      <ion-col>
+        <button ion-button class="submit-btn" full type="submit">Agregar</button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-row style="margin-top: 10px;">
+    <ion-col style="margin: auto;">
+      <img style="margin-left: 100px;width: 30%; height: 30%;" src="../../assets/imgs/logo.png">
+    </ion-col>
+  </ion-row>  
+</ion-content>
+

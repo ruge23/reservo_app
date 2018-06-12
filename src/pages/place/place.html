@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Lugar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="margin: 0;">
+  <ion-grid>
+    <ion-card *ngIf=info>
+        <ion-row>
+          <ion-col col-4>
+            <img src="../assets/imgs/logo.png"/>
+          </ion-col>
+          <ion-col col-8>
+            <h1 style="margin-top: 20%; margin-left: 5%;">{{info[0].nombre}}</h1>
+          </ion-col>
+        </ion-row>  
+        <ion-card-content>
+          <ion-card-title>
+            Description
+            </ion-card-title>
+          <p>
+            {{info[0].descripcion}}
+          </p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-toolbar style="width: 100% !important; margin: 0 !important;">
+              <ion-buttons>
+                <button (click)="goToMap(info[0].direccion)" ion-button style="margin-left: 30%;">
+                  <div>
+                    <ion-icon name="pin"></ion-icon>
+                    <span>UBICACIÓN</span>
+                  </div>
+                </button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button full color="secondary"(click)="goToEvents()">Eventos Actuales</button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
+    <ion-footer>
+        <ion-toolbar text-center="" color="dark">
+          <ion-buttons>
+            <button ion-button>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+            <button ion-button>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </button>
+            <button ion-button>
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+    </ion-footer>
+</ion-content>

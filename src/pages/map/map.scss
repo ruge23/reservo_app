@@ -1,0 +1,19 @@
+page-map {
+    ion-content{
+        background: rgb(229, 227, 223);
+        #map{
+            height: 100%;
+            width: 100%;
+            opacity: 1;
+            transition: opacity 150ms ease-in;
+            display: block;
+            &.show-map{
+                opacity: 1;
+            }
+            div div div a div{
+                display: none !important;
+            }
+        }
+    }
+}
+

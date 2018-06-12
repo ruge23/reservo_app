@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title color="secondary">Resumen Eventos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf=info>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="../assets/imgs/logo.png">
+      </ion-thumbnail>
+      <div style="border: 1px solid grey; border-radius: 30px; text-align: center; height: 60px;">
+        <h4>{{info.nombre}}</h4><br>
+        <p>{{info.fechadesde}}•</p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+      <ion-col>
+        <ion-toolbar style="width: 100% !important; margin: 0 !important;">
+          <ion-buttons>
+            <button ion-button style="margin-left: 30%;">
+              <div>
+                <span>TOTAL VENTAS : 51</span>
+              </div>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>
+  </ion-row>
+  <ion-card style="margin-top: 20px;">
+    <ion-card-title>
+      <h5 style="margin-left: 10px;">Resumen de Ventas</h5>
+    </ion-card-title>
+    <ion-card-content>
+      <button ion-button full (click)="goToListInvitados(this['info'])">
+        VER LISTA
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+      <ion-col style="margin-top: 20px;">
+        <ion-toolbar color="dark" style="width: 100% !important; margin: 0 !important;">
+            <ion-row>
+              <ion-col col-4 style="text-align: center; margin: auto auto;">
+                <ion-icon color="primary" style="font-size: 3em;" name="pie"></ion-icon>
+              </ion-col>
+              <ion-col col-8 style="text-align: center;">
+                <div>
+                  <p style="color: grey;">Entradas Vendidas</p>
+                  <ion-badge color="secondary">51/100</ion-badge>
+                </div>
+              </ion-col>
+            </ion-row>
+        </ion-toolbar>
+      </ion-col>
+  </ion-row>
+</ion-content>
